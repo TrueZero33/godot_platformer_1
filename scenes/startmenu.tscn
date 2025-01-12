@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://qmvxeoimmaf7"]
+[gd_scene load_steps=3 format=3 uid="uid://qmvxeoimmaf7"]
+
+[ext_resource type="Texture2D" uid="uid://cwhy825ydc3fn" path="res://assets/background/Knight_Platformer.png" id="1_upivx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5prca"]
+texture = ExtResource("1_upivx")
 
 [node name="startmenu" type="Control"]
 layout_mode = 3
@@ -15,6 +20,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5prca")
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
