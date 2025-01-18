@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=3 uid="uid://hjiko1tnb2he"]
+
+[ext_resource type="Script" path="res://scripts/controls.gd" id="1_1ics4"]
+[ext_resource type="Texture2D" uid="uid://dw84bfcyvj5fd" path="res://assets/background/knight_screenshot.png" id="1_c8ljw"]
+[ext_resource type="FontFile" uid="uid://digy4bql7l756" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_prikv"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ubnlt"]
+texture = ExtResource("1_c8ljw")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tyn8j"]
+bg_color = Color(0.856067, 0.856067, 0.856067, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_owy3c"]
+bg_color = Color(0.255659, 0.255659, 0.255659, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrdnr"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ics4")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ubnlt")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -296.0
+offset_right = 315.0
+offset_bottom = -256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 40
+text = "Knight Platformer"
+
+[node name="Screen" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -228.0
+offset_right = 116.0
+offset_bottom = -188.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
+[node name="VBoxContainerLeft" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -30.0
+offset_right = 419.0
+offset_bottom = 46.0
+grow_vertical = 2
+
+[node name="Movement" type="Label" parent="VBoxContainerLeft"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 25
+text = "Movement"
+
+[node name="Left" type="Label" parent="VBoxContainerLeft"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 20
+text = "Left: Left Arrow or A"
+
+[node name="Left2" type="Label" parent="VBoxContainerLeft"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 20
+text = "Right: Right Arrow or D
+"
+
+[node name="VBoxContainerRight" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -294.0
+offset_top = -33.5
+offset_right = -16.0
+offset_bottom = 17.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Actions" type="Label" parent="VBoxContainerRight"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 25
+text = "Actions"
+
+[node name="Jump" type="Label" parent="VBoxContainerRight"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.977937, 0.977937, 0.977937, 1)
+theme_override_fonts/font = ExtResource("2_prikv")
+theme_override_font_sizes/font_size = 20
+text = "Jump: Space Bar"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.5
+offset_top = -76.0
+offset_right = 57.5
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_tyn8j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_owy3c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rrdnr")
+text = "Back"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
