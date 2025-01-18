@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://qmvxeoimmaf7"]
+[gd_scene load_steps=8 format=3 uid="uid://qmvxeoimmaf7"]
 
+[ext_resource type="Script" path="res://scripts/startmenu.gd" id="1_48o5m"]
 [ext_resource type="Texture2D" uid="uid://cwhy825ydc3fn" path="res://assets/background/Knight_Platformer.png" id="1_upivx"]
 [ext_resource type="FontFile" uid="uid://digy4bql7l756" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_thby3"]
 
@@ -34,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_48o5m")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
@@ -100,3 +102,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ngobj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_v4ron")
 theme_override_styles/normal = SubResource("StyleBoxFlat_81ybx")
 text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
