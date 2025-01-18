@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=3 uid="uid://qmvxeoimmaf7"]
+
+[ext_resource type="Script" path="res://scripts/startmenu.gd" id="1_48o5m"]
+[ext_resource type="Texture2D" uid="uid://cwhy825ydc3fn" path="res://assets/background/Knight_Platformer.png" id="1_upivx"]
+[ext_resource type="FontFile" uid="uid://digy4bql7l756" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_thby3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5prca"]
+texture = ExtResource("1_upivx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ngobj"]
+bg_color = Color(0.812269, 0.81532, 0.801426, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4ron"]
+bg_color = Color(0.139811, 0.141777, 0.132642, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_81ybx"]
+bg_color = Color(0.414601, 0.418862, 0.39912, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="startmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48o5m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_5prca")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -216.0
+offset_right = 315.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_thby3")
+theme_override_font_sizes/font_size = 40
+text = "Knight Platformer"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.5
+offset_top = -70.0
+offset_right = 90.5
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_ngobj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v4ron")
+theme_override_styles/normal = SubResource("StyleBoxFlat_81ybx")
+text = "Start"
+
+[node name="Controls" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_ngobj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v4ron")
+theme_override_styles/normal = SubResource("StyleBoxFlat_81ybx")
+text = "Controls"
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_ngobj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_v4ron")
+theme_override_styles/normal = SubResource("StyleBoxFlat_81ybx")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
